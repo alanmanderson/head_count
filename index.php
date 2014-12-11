@@ -4,5 +4,4 @@
 #$message = "click http://alanmanderson.com/RedStake/bball/confirm.php to accept";
 
 #echo mail($to, $subject, $message);
-
-?>
+echo "Hello head_count";
