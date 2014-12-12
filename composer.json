@@ -1,0 +1,32 @@
+{
+	"name":"alanmanderson/head_count",
+	"description":"Polling and reporting to get attendance estimates for regularly occuring events using email.",
+	"version":"0.1",
+	"type":"library",
+	"keywords": ["polling","rsvp","evite"],
+	"url":"https://github.com/alanmanderson/head_count",
+	"time":"2014/12/11",
+	"license":"MIT",
+	"authors": [
+        {
+            "name": "Alan Anderson",
+            "email": "alan@alanmanderson.com",
+            "homepage": "https://github.com/alanmanderson",
+            "role": "Developer"
+        }
+    ],
+	"support": {
+		"email":"alan@alanmanderson.com",
+		"issues":"https://github.com/alanmanderson/head_count/issues",
+		"wiki":"https://github.com/alanmanderson/head_count/wiki",
+		"source":"https://github.com/alanmanderson/head_count"
+	},
+    "require": {
+        "sorskod/db": "1.*"
+    },
+	"autoload": {
+		"psr-4": {
+			"alanmanderson\\head_count\\" : "src/"
+		}
+	}
+}
