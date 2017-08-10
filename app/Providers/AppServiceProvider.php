@@ -1,6 +1,6 @@
 <?php
 
-namespace alanmanderson\headcount\Providers;
+namespace Alanmanderson\HeadCount\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

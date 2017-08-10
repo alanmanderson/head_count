@@ -1,6 +1,6 @@
 <?php
 
-namespace alanmanderson\headcount\Http\Middleware;
+namespace Alanmanderson\HeadCount\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

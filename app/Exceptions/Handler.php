@@ -1,6 +1,6 @@
 <?php
 
-namespace alanmanderson\headcount\Exceptions;
+namespace Alanmanderson\HeadCount\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;

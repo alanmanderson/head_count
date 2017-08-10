@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => alanmanderson\headcount\User::class,
+            'model' => Alanmanderson\HeadCount\User::class,
         ],
 
         // 'users' => [

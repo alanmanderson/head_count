@@ -1,9 +1,9 @@
 <?php
 
-namespace alanmanderson\headcount\Http\Controllers\Auth;
+namespace Alanmanderson\HeadCount\Http\Controllers\Auth;
 
-use alanmanderson\headcount\User;
-use alanmanderson\headcount\Http\Controllers\Controller;
+use Alanmanderson\HeadCount\User;
+use Alanmanderson\HeadCount\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -58,7 +58,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \alanmanderson\headcount\User
+     * @return \Alanmanderson\HeadCount\User
      */
     protected function create(array $data)
     {

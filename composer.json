@@ -19,7 +19,7 @@
             "database"
         ],
         "psr-4": {
-            "alanmanderson\\headcount\\": "app/"
+            "Alanmanderson\\HeadCount\\": "app/"
         }
     },
     "autoload-dev": {

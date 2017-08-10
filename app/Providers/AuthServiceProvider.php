@@ -1,6 +1,6 @@
 <?php
 
-namespace alanmanderson\headcount\Providers;
+namespace Alanmanderson\HeadCount\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'alanmanderson\headcount\Model' => 'alanmanderson\headcount\Policies\ModelPolicy',
+        'Alanmanderson\HeadCount\Model' => 'Alanmanderson\HeadCount\Policies\ModelPolicy',
     ];
 
     /**

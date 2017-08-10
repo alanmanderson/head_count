@@ -1,6 +1,6 @@
 <?php
 
-namespace alanmanderson\headcount\Mail;
+namespace Alanmanderson\HeadCount\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;

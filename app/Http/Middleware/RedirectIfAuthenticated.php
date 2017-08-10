@@ -1,6 +1,6 @@
 <?php
 
-namespace alanmanderson\headcount\Http\Middleware;
+namespace Alanmanderson\HeadCount\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

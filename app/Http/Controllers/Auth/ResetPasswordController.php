@@ -1,8 +1,8 @@
 <?php
 
-namespace alanmanderson\headcount\Http\Controllers\Auth;
+namespace Alanmanderson\HeadCount\Http\Controllers\Auth;
 
-use alanmanderson\headcount\Http\Controllers\Controller;
+use Alanmanderson\HeadCount\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller

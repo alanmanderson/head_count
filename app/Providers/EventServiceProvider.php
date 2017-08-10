@@ -1,6 +1,6 @@
 <?php
 
-namespace alanmanderson\headcount\Providers;
+namespace Alanmanderson\HeadCount\Providers;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'alanmanderson\headcount\Events\Event' => [
-            'alanmanderson\headcount\Listeners\EventListener',
+        'Alanmanderson\HeadCount\Events\Event' => [
+            'Alanmanderson\HeadCount\Listeners\EventListener',
         ],
     ];
 
