@@ -1,4 +1,7 @@
 <?php
+use Alanmanderson\HeadCount\Models\Event;
+use Alanmanderson\HeadCount\Models\Occurrence;
+use Alanmanderson\HeadCount\Notifications\EventRsvp;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,6 +14,15 @@
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('reply', 'ReplyController@reply');
+
+Route::get('test', function() {
+    $e = Event::find(2);
+    Notification::send($e->users, new EventRsvp(Occurrence::find(1)));
 });

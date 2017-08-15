@@ -1,22 +1,23 @@
 <?php
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 
-class CreateRepliesTable extends Migration {
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateEventUserTable extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
     public function up() {
-        Schema::create('replies', function (Blueprint $table) {
+        Schema::create('event_user', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id', false, true);
-            $table->integer('occurrence_id', false, true);
-            $table->decimal('likelihood', 1, 1);
-            $table->timestamps();
+            $table->integer('event_id', false, true);
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('occurrence_id')->references('id')->on('occurrences');
+            $table->foreign('event_id')->references('id')->on('events');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +27,6 @@ class CreateRepliesTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::drop('replies');
+        Schema::dropIfExists('event_user');
     }
 }

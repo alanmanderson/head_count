@@ -7,8 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class EventRsvp extends Mailable
-{
+class EventRsvp extends Mailable {
     use Queueable, SerializesModels;
 
     /**
@@ -16,8 +15,7 @@ class EventRsvp extends Mailable
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         //
     }
 
@@ -26,8 +24,7 @@ class EventRsvp extends Mailable
      *
      * @return $this
      */
-    public function build()
-    {
+    public function build() {
         return $this->view('view.name');
     }
 }
