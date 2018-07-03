@@ -1,12 +1,10 @@
 <?php
-
 namespace Alanmanderson\HeadCount\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable {
     use Notifiable;
 
     /**
@@ -15,7 +13,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password'
     ];
 
     /**
@@ -24,17 +24,19 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token'
     ];
 
     public function events() {
         return $this->belongsToMany('Alanmanderson\HeadCount\Models\Event');
     }
 
+    public function isMemberOfEvent($id) {
+        return $this->events()->whereEventId($id)->get()->count() > 0;
+    }
+
     public function routeNotificationForNexmo() {
-        if (strpos($this->phone, '1') === 0){
-            return $this->phone;
-        }
         return '1' . $this->phone;
     }
 }

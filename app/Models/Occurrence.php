@@ -13,4 +13,8 @@ class Occurrence extends Model {
     public function event(){
         return $this->belongsTo(Event::class);
     }
+
+    public function replies(){
+        return $this->hasMany('Alanmanderson\HeadCount\Models\Reply');
+    }
 }

@@ -8,18 +8,18 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\NexmoMessage;
 use Alanmanderson\HeadCount\Models\Occurrence;
 
-class EventRsvp extends Notification {
+class EventReport extends Notification {
     use Queueable;
 
-    private $occurrence;
+    private $replies;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(Occurrence $occurrence) {
-        $this->occurrence = $occurrence;
+    public function __construct($replies) {
+        $this->replies = $replies;
     }
 
     /**
@@ -43,7 +43,7 @@ class EventRsvp extends Notification {
     public function toMail($notifiable) {
         $event = $this->occurrence->event;
         return (new MailMessage)->view(
-                'mail.rsvp',
+                'mail.report',
                 [
                         "dayOfWeek" => $this->occurrence->start_time->format('l'),
                         "date" => $this->occurrence->start_time->format('F jS'),
@@ -57,10 +57,9 @@ class EventRsvp extends Notification {
 
     public function toNexmo($notifiable) {
         $eventName = $this->occurrence->event->name;
-        $eventId = $this->occurrence->event->id;
         $dayOfWeek = $this->occurrence->start_time->format('l');
         $time = $this->occurrence->start_time->format('h:i:s A');
-        $msg = "Are you coming to $eventName this $dayOfWeek at $time? reply y$eventId for yes or n$eventId for no";
+        $msg = "Are you coming to $eventName this $dayOfWeek at $time? reply y or n";
         return (new NexmoMessage)
             ->content($msg);
     }
