@@ -21,7 +21,7 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->describe('Display an inspiring quote');
 
-Artisan::command('occurrence:create {event_id}', function(int $event_id) {
+Artisan::command('occurrences:create {event_id}', function(int $event_id) {
     $e = Event::find($event_id);
     $cron = CronExpression::factory($e->schedule);
     $occurrence = Occurrence::create([
