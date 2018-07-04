@@ -42,13 +42,13 @@ Route::get('test', function() {
 
 Route::get('testSecret', function(){
     $base_url = 'https://rest.nexmo.com/sms/json?';
-    $security_secret = env('NEXMO_SECURITY_SECRET');
+    $security_secret = config('services.nexmo.security_secret');
 
     //The timestamps used in the signature are in UTC + 0
     date_default_timezone_set('UTC');
 
     $params = [
-        'api_key' =>  env('NEXMO_API_KEY'),
+        'api_key' =>  config('services.nexmo.key'),
         'to' => '16177808043',
         'from' => '12034569956',
         'text' => 'Hello from Nexmo',
