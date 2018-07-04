@@ -38,6 +38,7 @@ return [
     'nexmo' => [
             'key' => env('NEXMO_KEY'),
             'secret' => env('NEXMO_SECRET'),
+            'security_secret' => env('NEXMO_SECURITY_SECRET'),
             'sms_from' => env('NEXMO_FROM')
     ]
 
