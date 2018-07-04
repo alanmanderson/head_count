@@ -1,5 +1,6 @@
 <?php
 
+use Alanmanderson\HeadCount\Models\Event;
 use Alanmanderson\HeadCount\Models\Occurrence;
 use Alanmanderson\HeadCount\Notifications\EventRsvp;
 use Cron\CronExpression;
