@@ -27,16 +27,10 @@ class Kernel extends ConsoleKernel {
      */
     protected function schedule(Schedule $schedule) {
         $schedule->call(function () {
-            // Create Occurance
-            $e = Event::find(1);
-            $cron = CronExpression::factory($e->schedule);
-            $occurrence = Occurrence::create([
-                    'event_id'=>$e->id,
-                    'start_time'=>$cron->getNextRunDate()->format('Y-m-d H:i:s')
-            ]);
-
-
-            Notification::send($e->users, new EventRsvp($occurrence));
+            $e = Event::whereName("Elder's Quorum Basketball")->first();
+            Artisan::call('occurrences:create', ['event_id' => $e->id]);
+            $e->load('occurrences');
+            Artisan::call('users:notify', ['occurrence_id' => $e->occurrences->last()->id]);
         })->weekly()->mondays()->at('16:08');
     }
 
